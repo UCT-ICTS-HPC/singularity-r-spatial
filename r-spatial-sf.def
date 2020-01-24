@@ -9,7 +9,7 @@ Include: software-properties-common
     OS_VERSION Ubuntu 16.04
     APPLICATION_URL http://r-spatial.github.io/sf/
 
-    SYSTEM_NAME UCT ICTS HPC
+    SYSTEM_NAME UCT ICTS HPC 
     SYSTEM_SINGULARITY_VERSION 3.2
     SYSTEM_URL http://hpc.uct.ac.za
 
@@ -31,6 +31,7 @@ Include: software-properties-common
     add-apt-repository ppa:ubuntugis/ubuntugis-unstable
     add-apt-repository 'deb http://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/'
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
     apt update 
     apt upgrade -y
 
