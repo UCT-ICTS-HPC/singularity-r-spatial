@@ -19,6 +19,7 @@ Include: software-properties-common
 %environment
     # Set system locale
     export LC_ALL=C
+    export R_LIBS=/usr/local/lib/R/site-library
      
 %post -c /bin/bash
 
