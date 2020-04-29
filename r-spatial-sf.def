@@ -20,11 +20,9 @@ Include: software-properties-common
     # Set system locale
     export LC_ALL=C
     export R_LIBS=/usr/local/lib/R/site-library
-    export R_INCLUDE_DIR=/usr/share/R/include/
+    export R_INCLUDE_DIR=/usr/share/R/include
      
 %post -c /bin/bash
-
-    # Update Ubuntu Cache and begin install
     apt-add-repository universe
     apt update -y
     apt install -y software-properties-common
