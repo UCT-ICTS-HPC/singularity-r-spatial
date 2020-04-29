@@ -22,7 +22,7 @@ Include: software-properties-common
     export R_LIBS=/usr/local/lib/R/site-library
     export R_INCLUDE_DIR=/usr/share/R/include
      
-%post -c /bin/bash
+%post
     apt-add-repository universe
     apt update -y
     apt install -y software-properties-common
