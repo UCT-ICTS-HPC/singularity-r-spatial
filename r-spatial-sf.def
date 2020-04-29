@@ -21,6 +21,7 @@ Include: software-properties-common
     export LC_ALL=C
     export R_LIBS=/usr/local/lib/R/site-library
     export R_INCLUDE_DIR=/usr/share/R/include
+    export R_CHECK_FORCE_SUGGESTS=false
      
 %post
     apt-add-repository universe
@@ -69,7 +70,7 @@ Include: software-properties-common
 
     # Install R package dependencies 
     Rscript -e 'install.packages(c("sf", "lwgeom", "covr", "raster"), dependencies = TRUE, repos = "https://cloud.r-project.org")'    
-    git clone   https://github.com/r-spatial/sf.git
+    git clone https://github.com/r-spatial/sf.git
     R CMD build --no-build-vignettes sf
     R CMD INSTALL sf_*tar.gz
     apt install -y pandoc pandoc-citeproc
@@ -82,7 +83,6 @@ Include: software-properties-common
 
 %help 
     This is a SF with R core version 3.6 container. 
-
 
 %test
     # The following tests will be used to test the functionality of the container build
