@@ -48,9 +48,9 @@ Include: software-properties-common
         libproj-dev \
         liblwgeom-dev \
         libudunits2-dev \
+        libglu1-mesa-dev \
         postgis \
-        r-base-dev \
-        r-cran-rjava
+        r-base-dev
 
     apt install -y texinfo --allow-unauthenticated \
        texlive-base \
@@ -69,10 +69,10 @@ Include: software-properties-common
     apt install -y libjq-dev
 
     # Install R package dependencies 
-    export _R_CHECK_FORCE_SUGGESTS_=false; Rscript -e 'install.packages(c("sf", "lwgeom", "covr", "raster"), dependencies = TRUE, repos = "https://cloud.r-project.org")'    
+    Rscript -e 'install.packages(c("sf", "lwgeom", "covr", "raster"), dependencies = TRUE, repos = "https://cloud.r-project.org")'    
     git clone https://github.com/r-spatial/sf.git
-    export _R_CHECK_FORCE_SUGGESTS_=false; R CMD build --no-build-vignettes sf
-    export _R_CHECK_FORCE_SUGGESTS_=false; R CMD INSTALL sf_*tar.gz
+    R CMD build --no-build-vignettes sf
+    R CMD INSTALL sf_*tar.gz
     apt install -y pandoc pandoc-citeproc
 
     # Clean Up 
