@@ -21,7 +21,6 @@ Include: software-properties-common
     export LC_ALL=C
     export R_LIBS=/usr/local/lib/R/site-library
     export R_INCLUDE_DIR=/usr/share/R/include
-    export _R_CHECK_FORCE_SUGGESTS_=false
      
 %post
     apt-add-repository universe
@@ -51,6 +50,7 @@ Include: software-properties-common
         libudunits2-dev \
         postgis \
         r-base-dev
+        r-cran-rjava
 
     apt install -y texinfo --allow-unauthenticated \
        texlive-base \
@@ -74,7 +74,6 @@ Include: software-properties-common
     export _R_CHECK_FORCE_SUGGESTS_=false; R CMD build --no-build-vignettes sf
     export _R_CHECK_FORCE_SUGGESTS_=false; R CMD INSTALL sf_*tar.gz
     apt install -y pandoc pandoc-citeproc
-    #export _R_CHECK_FORCE_SUGGESTS_=false; R CMD check --as-cran sf_*tar.gz
 
     # Clean Up 
     apt clean
