@@ -49,7 +49,7 @@ Include: software-properties-common
         liblwgeom-dev \
         libudunits2-dev \
         postgis \
-        r-base-dev
+        r-base-dev \
         r-cran-rjava
 
     apt install -y texinfo --allow-unauthenticated \
