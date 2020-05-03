@@ -64,16 +64,13 @@ Stage: build
        texlive-latex-recommended
     
     # Installation of ttmaptools/rmapshaper/geojsonio
-    apt install -y libv8-3.14-dev libprotobuf-dev protobuf-compiler libcairo2-dev
-    apt update -y 
-    apt install -y libjq-dev pandoc pandoc-citeproc
+    apt install -y libv8-3.14-dev libprotobuf-dev protobuf-compiler libcairo2-dev libjq-dev pandoc pandoc-citeproc
 
     # Install R package dependencies     
-    git clone https://github.com/r-spatial/sf.git
-    R CMD build --no-build-vignettes sf
-    R CMD INSTALL sf_*tar.gz
-    apt install -y pandoc pandoc-citeproc
-    Rscript -e 'install.packages(c("lwgeom", "covr", "raster"), dependencies = TRUE, repos = "https://cloud.r-project.org")'
+  #  git clone https://github.com/r-spatial/sf.git
+  #  R CMD build --no-build-vignettes sf
+  #  R CMD INSTALL sf_*tar.gz
+    Rscript -e 'install.packages(c("sf","lwgeom", "covr", "raster"), dependencies = TRUE, repos = "https://cloud.r-project.org")'
 
     # Clean Up 
     apt clean
