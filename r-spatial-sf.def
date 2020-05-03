@@ -1,12 +1,12 @@
 Bootstrap: debootstrap
 MirrorURL: http://archive.ubuntu.com/ubuntu/
-OSVersion: xenial
+OSVersion: bionic
 Include: software-properties-common
 
 %labels
 
     APPLICATION_NAME Simple Features R Spatial
-    OS_VERSION Ubuntu 16.04
+    OS_VERSION Ubuntu 18.04
     APPLICATION_URL http://r-spatial.github.io/sf/
 
     SYSTEM_NAME UCT ICTS HPC 
@@ -29,7 +29,7 @@ Include: software-properties-common
     
     # R SP/SF Installation and Configuration. 
     add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-    add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/'
+    add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
     apt update 
     apt upgrade -y
