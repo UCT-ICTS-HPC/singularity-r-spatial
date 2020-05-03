@@ -23,7 +23,7 @@ Stage: build
      
 %post
     apt update -y
-    apt-get install software-properties-common
+    apt-get install -y software-properties-common
     apt-add-repository universe
     apt update -y
     apt install -y apt-transport-https dirmngr
