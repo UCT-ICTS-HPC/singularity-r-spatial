@@ -22,9 +22,11 @@ Stage: build
     export R_INCLUDE_DIR=/usr/share/R/include
      
 %post
+    apt update -y
+    apt-get install software-properties-common
     apt-add-repository universe
     apt update -y
-    apt install -y software-properties-common apt-transport-https dirmngr
+    apt install -y apt-transport-https dirmngr
     
     # R SP/SF Installation and Configuration. 
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
