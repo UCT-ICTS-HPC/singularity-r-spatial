@@ -1,7 +1,6 @@
-Bootstrap: debootstrap
-MirrorURL: http://archive.ubuntu.com/ubuntu/
-OSVersion: bionic
-Include: software-properties-common
+Bootstrap: library
+From: ubuntu:18.04
+Stage: build
 
 %labels
 
