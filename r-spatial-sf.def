@@ -65,7 +65,6 @@ Stage: build
     
     # Installation of ttmaptools/rmapshaper/geojsonio
     apt install -y libv8-3.14-dev libprotobuf-dev protobuf-compiler libcairo2-dev
-    add-apt-repository -y ppa:opencpu/jq
     apt update -y 
     apt install -y libjq-dev pandoc pandoc-citeproc
 
