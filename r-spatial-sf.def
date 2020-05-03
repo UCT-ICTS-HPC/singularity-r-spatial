@@ -25,7 +25,7 @@ Include: software-properties-common
 %post
     apt-add-repository universe
     apt update -y
-    apt install -y software-properties-common apt-transport-https
+    apt install -y software-properties-common apt-transport-https dirmngr
     
     # R SP/SF Installation and Configuration. 
     gpg --keyserver pgp.mit.edu --recv-key 381BA480
