@@ -44,6 +44,7 @@ Stage: build
         make \
         wget \
         git \
+        libssl-dev \
         libgdal-dev \
         libgeos-dev \
         libproj-dev \
