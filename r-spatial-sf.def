@@ -18,15 +18,24 @@ Stage: build
 %environment
     # Set system locale
     export LC_ALL=C
+    export LD_LIBRARY_PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/
     export R_LIBS=/usr/local/lib/R/site-library
     export R_INCLUDE_DIR=/usr/share/R/include
-     
+    export JAR="/usr/bin/jar"
+    export JAVA="/usr/bin/java"
+    export JAVAC="/usr/bin/javac"
+    export JAVAH="/usr/bin/javah"
+    export JAVA_CPPFLAGS="-I/usr/lib/jvm/java-8-openjdk-amd64/jre/../include -I/usr/lib/jvm/java-8-openjdk-amd64/jre/../include/linux"
+    export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+    export JAVA_LD_LIBRARY_PATH="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server"
+    export JAVA_LIBS="-L/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server -ljvm"
+         
 %post
     apt update -y
     apt-get install -y software-properties-common
     apt-add-repository universe
     apt update -y
-    apt install -y apt-transport-https dirmngr
+    apt install -y apt-transport-https dirmngr openjdk-8-jdk
     
     # R SP/SF Installation and Configuration. 
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
